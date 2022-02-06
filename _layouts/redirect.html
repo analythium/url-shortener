@@ -19,6 +19,6 @@
     <script src="https://cdn.usefathom.com/script.js" data-site="{{ site.fathom_analytics }}" defer></script>
 </head>
 <body>
-    <p>Redirecting to <a href="{{ page.redirect.to }}">{{ page.redirect.to }}</a></p>
+    <p>Redirecting to <a href="{{ page.redirect.to }}{% if page.utm %}?{{ page.utm.source | url_encode }}&{{ page.utm.medium | url_encode }}&{{ page.utm.campaign | url_encode }}{% endif %}">{{ page.redirect.to }}</a></p>
 </body>
 </html>
